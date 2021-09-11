@@ -21,6 +21,12 @@ footer {
   color: #fff;
   list-style-type: none; }
 
-.pbox {
-  border: #000;
-  color: #fff; }
+.boxtext {
+  color: #000; }
+
+.deseacomprar {
+  display: flex;
+  justify-content: center; }
+
+.aparece {
+  display: none; }

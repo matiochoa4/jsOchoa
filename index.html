@@ -30,11 +30,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Contacto</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/secciones/tienda.html"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 20 20">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg></a>
-            </li>
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -55,6 +50,58 @@
     <section>
       <img width="100%" src="/imagenesmajuma/banner4.png" alt="banner4">
     </section>
+    <section>
+      <div class="p-3 deseacomprar">
+        <button onclick="agregar()" class="btn btn-outline-light" type="submit">Compre YA!</button>
+      </div>
+    </section>
+
+    <!-- hidden section -->
+    <section id="aparecer" class="aparece">
+      <form action="#" id="formulario" class="row g-3 p-3 m-0">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label colorlabel">Nombre</label>
+          <input name="nombre" id="nombre" placeholder="Escriba su nombre" class="form-control" type="text">
+        </div>
+        <div class="col-md-6">
+          <label for="apellido" class="form-label colorlabel">Apellido</label>
+          <input name="apellido" id="apellido" placeholder="Escriba su apellido" class="form-control" type="text">
+        </div>
+        <div class="col-md-6">
+          <label for="mail" class="form-label colorlabel">Correo Electrónico</label>
+          <input name="mail" id="mail" placeholder="email@example.com" class="form-control" type="email">
+        </div>
+        <div class="col-md-6">
+          <label for="residencia" class="form-label colorlabel">Lugar de residencia</label>
+          <select name="residencia" id="residencia" class="form-select">
+            <option selected>Seleccionar...</option>
+            <option value="">Buenos Aires</option>
+            <option value="">Mendoza</option>
+            <option value="">Córdoba</option>
+            <option value="">La Pampa</option>
+            <option value="">Entre Rios</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="cantidad" class="form-label colorlabel">Cuantos MAJUMA! desea comprar?</label>
+          <input type="number" name="cantidad" id="cantidadProductos" min="1" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label for="precio" class="form-label colorlabel">Precio total</label>
+          <input type="text" id="idPrecio" class="form-control boxtext" readonly>
+        </div>
+        <div class="col-md-3 d-flex align-items-end justify-content-evenly">
+            <button onclick="calcularPrecio()" class="hover btn btn-outline-light" type="submit">Calcular precio</button>
+            <button onclick="comprarHistorial()" type="submit" class="btn btn-outline-light">Comprar</button>
+        </div>
+        <div class="col-md-12">
+          <label for="historial" class="form-label colorlabel"></label>
+          <select name="historial" id="historial" class="form-select">
+
+          </select>
+        </div>
+      </form>
+    </section>
   </main>
     
   <footer class="container-fluid">
@@ -62,7 +109,7 @@
   </footer>
   
   <!-- scripts -->
-  <!-- <script src="/js/scripts.js"></script> -->
+  <script src="/js/tienda.js"></script>
   <!-- bootstrap scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>

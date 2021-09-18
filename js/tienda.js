@@ -2,12 +2,12 @@
 
 
 function agregar () {
-  document.getElementById('aparecer').style.display = 'block';
+  $("#aparecer")[0].style.display = 'block';
 }
   function calcularPrecio () {
-      const nombreIngresado = document.getElementById("nombre");
-      const apellidoIngresado = document.getElementById("apellido");
-      const cantidadIngresada = document.getElementById ("cantidadProductos");
+      const nombreIngresado = $("#nombre")[0];
+      const apellidoIngresado = $("#apellido")[0];
+      const cantidadIngresada = $("#cantidadProductos")[0];
       const nombreId = nombreIngresado.value;
       const apellidoId = apellidoIngresado.value;
       const cantidadId = cantidadIngresada.value;
@@ -50,13 +50,13 @@ function agregar () {
             }
             event.preventDefault();
 
-      document.getElementById("idPrecio").value = "$" + precio;
+      $("#idPrecio")[0].value = "$" + precio;
     }
     
   function comprarHistorial (){
-      const nombreIngresado = document.getElementById("nombre");
-      const apellidoIngresado = document.getElementById("apellido");
-      const cantidadIngresada = document.getElementById ("cantidadProductos");
+      const nombreIngresado = $("#nombre")[0];
+      const apellidoIngresado = $("#apellido")[0];
+      const cantidadIngresada =  $("#cantidadProductos")[0];
       const nombreId = nombreIngresado.value;
       const apellidoId = apellidoIngresado.value;
       const cantidadId = cantidadIngresada.value;
@@ -81,12 +81,12 @@ function agregar () {
         }
 
       class compraRealizada {
-        constructor(nombreForm, apellidoForm, mailForm, residenciaForm, /* cantidadForm, */ precioForm) {
+        constructor(nombreForm, apellidoForm, mailForm, residenciaForm, cantidadForm, precioForm) {
           this.nombreForm = nombreForm;
           this.apellidoForm = apellidoForm;
           this.mailForm = mailForm;
           this.residenciaForm = residenciaForm;
-          //this.cantidadForm = cantidadForm;
+          this.cantidadForm = cantidadForm;
           this.precioForm = precioForm;
         }
       }
@@ -104,33 +104,46 @@ function agregar () {
           localStorage.setItem('usuariosCompra', JSON.stringify(usuariosCompra))
       }
 
-      let formNombre = document.getElementById("nombre");
-      let formApellido = document.getElementById("apellido");
-      let formMail = document.getElementById("mail");
-      let formResidencia = document.getElementById("residencia");
-      //let formCantidad = document.getElementById("cantidad");
-      let formPrecio = document.getElementById("idPrecio");
-      formulario.addEventListener('submit', (event) => {
+      let formNombre = $("#nombre")[0];
+      let formApellido = $("#apellido")[0];
+      let formMail = $("#mail")[0];
+      let formResidencia = $("#residencia")[0];
+      let formCantidad = $("#cantidadProductos")[0];
+      let formPrecio = $("#idPrecio")[0];
+      
+      $(document).ready(function(){
+      $("#formulario").submit(function(event){
       
         event.preventDefault();
         const formularioNombre = formNombre.value;
         const formularioApellido = formApellido.value;
         const formularioMail = formMail.value;
         const formularioResidencia = formResidencia.value;
-        //const formularioCantidad = formCantidad.value;
+        const formularioCantidad = formCantidad.value;
         const formularioPrecio = formPrecio.value;
 
     
-        const usuario = new compraRealizada(formularioNombre, formularioApellido, formularioMail, formularioResidencia, /* formularioCantidad, */ formularioPrecio)
+        const usuario = new compraRealizada(formularioNombre, formularioApellido, formularioMail, formularioResidencia, formularioCantidad, formularioPrecio)
         console.log(usuario);
         create(usuario);
         
         // funciona bien si saco el la variable en la que se ingresa un número
 
+        // esto cuando lo paso a jquery no me funciona, claramente hay algo que estoy haciendo mal
+      
         let crearSelect = document.createElement("option");
         let textnode = document.createTextNode("El precio es de la compra de " + nombreCompleto + " es $" + precio);
         crearSelect.appendChild(textnode);
         document.getElementById("historial").appendChild(crearSelect);
         event.preventDefault();
-      })    
-  }
+
+      /*  */
+
+       /* $("option"),{
+         text: "El precio de la compra de " + nombreCompleto + " es de $" + precio
+       }.append("#historial") */ 
+       
+       // esta es la ultima forma que probe
+    })
+  })
+}

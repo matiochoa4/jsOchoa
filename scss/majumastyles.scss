@@ -1,8 +1,10 @@
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    font-family: 'Bebas Neue', cursive;
     margin: 0;
     padding: 0;
 }
+
 
 body {
     background-color: #000;
@@ -39,3 +41,31 @@ footer {
 .aparece {
     display: none;
 }
+
+.productos {
+    background-color: #fff;
+    padding: 2rem;
+
+}
+
+.nosotros {
+    background-color: rgb(225, 225, 225);
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    h1 {
+        font-family: 'Bebas Neue', cursive;
+        display: flex;
+        justify-content: center;
+    }
+    p {
+        @extend h1;
+    }
+}
+
+.agregar {
+    display: flex;
+    justify-content: center;
+}
+

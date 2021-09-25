@@ -1,0 +1,38 @@
+[
+    {
+    "PRODUCTO": "JAGGER",
+    "PRECIO": 500,
+    "DESCRIPCION":"20% ALCOHOL",
+    "STOCK": 96
+    },
+    {   
+    "PRODUCTO": "VODKA",
+    "PRECIO": 500,
+    "DESCRIPCION":"30% ALCOHOL",
+    "STOCK": 23
+    },
+    {   
+    "PRODUCTO": "BLUECORACAO",
+    "PRECIO": 500,
+    "DESCRIPCION":"33% ALCOHOL",
+    "STOCK": 75
+    },
+    {   
+    "PRODUCTO": "GANCIA",
+    "PRECIO": 500,
+    "DESCRIPCION":"17% ALCOHOL",
+    "STOCK": 150
+    },
+    {   
+    "PRODUCTO": "VINO",
+    "PRECIO": 500,
+    "DESCRIPCION":"22% ALCOHOL",
+    "STOCK": 117
+    },
+    {   
+    "PRODUCTO": "CHAMPAGNE",
+    "PRECIO": 500,
+    "DESCRIPCION":"45% ALCOHOL",
+    "STOCK": 100
+    }
+]

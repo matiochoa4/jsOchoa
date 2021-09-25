@@ -2,12 +2,12 @@
 
 
 function agregar () {
-  $("#aparecer")[0].style.display = 'block';
+  document.getElementById("aparecer").style.display = 'block';
 }
   function calcularPrecio () {
-      const nombreIngresado = $("#nombre")[0];
-      const apellidoIngresado = $("#apellido")[0];
-      const cantidadIngresada = $("#cantidadProductos")[0];
+      const nombreIngresado = document.getElementById("nombre");
+      const apellidoIngresado = document.getElementById("apellido");
+      const cantidadIngresada = document.getElementById("cantidadProductos");
       const nombreId = nombreIngresado.value;
       const apellidoId = apellidoIngresado.value;
       const cantidadId = cantidadIngresada.value;
@@ -54,9 +54,9 @@ function agregar () {
     }
     
   function comprarHistorial (){
-      const nombreIngresado = $("#nombre")[0];
-      const apellidoIngresado = $("#apellido")[0];
-      const cantidadIngresada =  $("#cantidadProductos")[0];
+      const nombreIngresado = document.getElementById("nombre");
+      const apellidoIngresado = document.getElementById("apellido");
+      const cantidadIngresada =  document.getElementById("cantidadProductos");
       const nombreId = nombreIngresado.value;
       const apellidoId = apellidoIngresado.value;
       const cantidadId = cantidadIngresada.value;
@@ -104,15 +104,15 @@ function agregar () {
           localStorage.setItem('usuariosCompra', JSON.stringify(usuariosCompra))
       }
 
-      let formNombre = $("#nombre")[0];
-      let formApellido = $("#apellido")[0];
-      let formMail = $("#mail")[0];
-      let formResidencia = $("#residencia")[0];
-      let formCantidad = $("#cantidadProductos")[0];
-      let formPrecio = $("#idPrecio")[0];
+      let formNombre = document.getElementById("nombre");
+      let formApellido = document.getElementById("apellido");
+      let formMail = document.getElementById("mail");
+      let formResidencia = document.getElementById("residencia");
+      let formCantidad = document.getElementById("cantidadProductos");
+      let formPrecio = document.getElementById("idPrecio");
       
-      $(document).ready(function(){
-      $("#formulario").submit(function(event){
+
+        formulario.addEventListener('submit', (event) => {
       
         event.preventDefault();
         const formularioNombre = formNombre.value;
@@ -126,24 +126,59 @@ function agregar () {
         const usuario = new compraRealizada(formularioNombre, formularioApellido, formularioMail, formularioResidencia, formularioCantidad, formularioPrecio)
         console.log(usuario);
         create(usuario);
-        
-        // funciona bien si saco el la variable en la que se ingresa un número
-
-        // esto cuando lo paso a jquery no me funciona, claramente hay algo que estoy haciendo mal
       
         let crearSelect = document.createElement("option");
         let textnode = document.createTextNode("El precio es de la compra de " + nombreCompleto + " es $" + precio);
         crearSelect.appendChild(textnode);
         document.getElementById("historial").appendChild(crearSelect);
-        event.preventDefault();
-
-      /*  */
-
-       /* $("option"),{
-         text: "El precio de la compra de " + nombreCompleto + " es de $" + precio
-       }.append("#historial") */ 
-       
-       // esta es la ultima forma que probe
+        event.preventDefault();      
     })
-  })
-}
+
+
+    /* const URLJSON = '../data/catalogo.json';
+    $("#compra1").click(() => {
+        $.getJSON(URLJSON, function(estado, respuesta){
+            if(estado === "success"){
+                let alcohol = respuesta;         
+                let producto1 = "JAGGER";
+                for (const dato of alcohol) {
+                    const productoencontrado = alcohol.find((dato) => dato.PRODUCTO === producto1);
+                    if (productoencontrado != undefined) {
+                        alert(productoencontrado);
+                    }else {
+                        console.log("Este producto no se encuentra en la tienda");
+                    }
+                }
+            }
+        }
+        )
+    }
+    ) */
+
+  }
+
+
+ 
+  // esto es un detalle para cuando la parte de productos quede funcional
+
+/*   function agregado() {
+    $("#compra").html("Se Añadio al Carrito");
+  }
+  function agregado1() {
+    $("#compra1").html("Se Añadio al Carrito");
+  }
+  function agregado2() {
+    $("#compra2").html("Se Añadio al Carrito");
+  }
+  function agregado3() {
+    $("#compra3").html("Se Añadio al Carrito");
+  }
+  function agregado4() {
+    $("#compra4").html("Se Añadio al Carrito");
+  }
+  function agregado5() {
+    $("#compra5").html("Se Añadio al Carrito");
+  } */
+
+
+

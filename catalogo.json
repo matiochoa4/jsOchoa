@@ -1,38 +1,38 @@
 [
     {
-    "PRODUCTO": "JAGGER",
-    "PRECIO": 500,
-    "DESCRIPCION":"20% ALCOHOL",
-    "STOCK": 96
+      "precio": 500,
+      "id": 1,
+      "title": "Jagger + Monster",
+      "thumbnailUrl": "/imagenesmajuma/IMG_20190309_142943937 (1).jpg"
     },
-    {   
-    "PRODUCTO": "VODKA",
-    "PRECIO": 500,
-    "DESCRIPCION":"30% ALCOHOL",
-    "STOCK": 23
+    {
+      "precio": 300,
+      "id": 2,
+      "title": "Gancia + Sprite",
+      "thumbnailUrl": "/imagenesmajuma/IMG_20190309_142943937 (1).jpg"
     },
-    {   
-    "PRODUCTO": "BLUECORACAO",
-    "PRECIO": 500,
-    "DESCRIPCION":"33% ALCOHOL",
-    "STOCK": 75
+    {
+      "precio": 200,
+      "id": 3,
+      "title": "Campari + Jugo",
+      "thumbnailUrl": "/imagenesmajuma/IMG_20190309_142943937 (1).jpg"
     },
-    {   
-    "PRODUCTO": "GANCIA",
-    "PRECIO": 500,
-    "DESCRIPCION":"17% ALCOHOL",
-    "STOCK": 150
+    {
+      "precio": 300,
+      "id": 4,
+      "title": "Blue Coracao + Sprite",
+      "thumbnailUrl": "/imagenesmajuma/IMG_20190309_142943937 (1).jpg"
     },
-    {   
-    "PRODUCTO": "VINO",
-    "PRECIO": 500,
-    "DESCRIPCION":"22% ALCOHOL",
-    "STOCK": 117
+    {
+      "precio": 500,
+      "id": 5,
+      "title": "Fernet + Coca",
+      "thumbnailUrl": "/imagenesmajuma/IMG_20190309_142943937 (1).jpg"
     },
-    {   
-    "PRODUCTO": "CHAMPAGNE",
-    "PRECIO": 500,
-    "DESCRIPCION":"45% ALCOHOL",
-    "STOCK": 100
+    {
+      "precio": 200,
+      "id": 6,
+      "title": "Vino + Fanta",
+      "thumbnailUrl": "/imagenesmajuma/IMG_20190309_142943937 (1).jpg"
     }
-]
+  ]

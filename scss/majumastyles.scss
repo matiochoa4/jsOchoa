@@ -151,23 +151,17 @@ label {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: auto;
-}
-
-.card {
-    padding-bottom: 0.5rem;
 }
 
 .container .card {
-    width: 330px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    margin: 20px;
+    margin-top: 20px;
     text-align: center;
     transition: all 0.25s;
     display: flex;
@@ -180,23 +174,28 @@ label {
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);;
 }
 
-.container .card img {
-    width: 330px;
-    height: 220;
+.btn-danger {
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
 }
 
-.container .card h4 {
-    padding: 0.5rem;
-    font-weight: 600;
+.btn-danger:hover {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
 }
 
-.container .card p {
-    padding: 0 1rem;
-    font-size: 16px;
-    font-weight: 300;
+.btn-info, .btn-dark {
+    @extend .btn-danger
+} 
+
+.btncontainer {
+    padding-bottom: 1rem;
 }
 
-.container .card button {
-    width: 50%;
+.form-label {
+    display: flex;
+    justify-content: center;
 }
 

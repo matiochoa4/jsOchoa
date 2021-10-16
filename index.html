@@ -12,6 +12,9 @@
   <title>Majuma</title>
 </head>
 <body>
+
+  <!-- HEADER -->
+
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark p-2 fondonav">
       <div class="container-fluid">
@@ -31,19 +34,17 @@
               <a class="nav-link" href="#contacto">Contacto</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+              <a href="#market" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
               </svg></a>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
   </header>
+
+  <!-- CUERPO DEL SITIO -->
 
   <main>
     <section class="row">
@@ -63,123 +64,79 @@
       </div>
     </section>
 
+    <!-- CARRITO -->
 
-    <!-- PRODUCTOS -->
-
-    <section class="productosC" id="productos">
-      <div class="container">
-        <div class="card">
-          <img id="informacion5" src="/imagenesmajuma/IMG_20190309_142943937 (1).jpg" alt="foto">
-          <h4>Producto</h4>
-          <p>$500</p>
-          <button id="compra" class="btn btn-outline-dark">Agregar al carrito</button>
-        </div>
-        <div class="card">
-          <img src="/imagenesmajuma/IMG_20190309_142943937 (1).jpg" alt="foto">
-          <h4>Producto 2</h4>
-          <p>$500</p>
-          <button id="compra1" class="btn btn-outline-dark">Agregar al carrito</button>
-        </div>
-        <div class="card">
-          <img id="informacion1" src="/imagenesmajuma/IMG_20190309_142943937 (1).jpg" alt="foto">
-          <h4>Producto 3</h4>
-          <p>$500</p>
-          <button id="compra2" class="btn btn-outline-dark">Agregar al carrito</button>
-        </div>
-        <div class="card">
-          <img id="informacion2" src="/imagenesmajuma/IMG_20190309_142943937 (1).jpg" alt="foto">
-          <h4>Producto 4</h4>
-          <p>$500</p>
-          <button id="compra3" class="btn btn-outline-dark">Agregar al carrito</button>
-        </div>
-        <div class="card">
-          <img id="informacion3" src="/imagenesmajuma/IMG_20190309_142943937 (1).jpg" alt="foto">
-          <h4>Producto 5</h4>
-          <p>$500</p>
-          <button id="compra4" class="btn btn-outline-dark">Agregar al carrito</button>
-        </div>
-        <div class="card">
-          <img id="informacion4" src="/imagenesmajuma/IMG_20190309_142943937 (1).jpg" alt="foto">
-          <h4>Producto 6</h4>
-          <p>$500</p>
-          <button  id="compra5" class="btn btn-outline-dark">Agregar al carrito</button> <!-- no colgues en agragar onclick="agregado5()"salamin -->
-        </div>
-      </div>
-    </section>
-    
-    <section class="productosC">
-      <div>
-        <button class="btn btn-outline-dark" id="json">Informacion Adicional</button>
-      </div>
-    </section>
-
-    <section class="productosC">
-        <table class="table aparece" id="tabla">
-          <thead>
-            <tr>
-              <th scope="col">Producto</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Descripcion</th>
-              <th scope="col">Stock</th>
-            </tr>
-          </thead>
-          <tbody id="res">
-            
-          </tbody>
-        </table>
-    </section>
-
-    <div class="p-3 deseacomprar">
-      <button onclick="agregar()" class="btn btn-outline-light" type="submit">Compre YA!</button>
+    <section id="productos" style="background-color: white;">
+    <div class="container">
+      <div class="row" id="cards"></div>
+      <table class="table" id="market">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Item</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Acción</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody id="items"></tbody>
+        <tfoot>
+          <tr id="totales">
+            <th scope="row" colspan="5">Carrito vacío</th>
+          </tr>
+        </tfoot>
+      </table>      
     </div>
 
-    <!-- hidden section -->
+    <template id="template-totales">
+      <th scope="row" colspan="2">Total productos</th>
+      <td>10</td>
+      <td>
+          <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+              vaciar carrito
+          </button>
+      </td>
+      <td class="font-weight-bold">$ <span>5000</span></td>
+  </template>
+  
+  <template id="template-carrito">
+    <tr>
+      <th scope="row">id</th>
+      <td>Café</td>
+      <td>1</td>
+      <td>
+          <button class="btn btn-info btn-sm">
+              +
+          </button>
+          <button class="btn btn-danger btn-sm">
+              -
+          </button>
+      </td>
+      <td>$ <span>500</span></td>
+    </tr>
+  </template>
 
-    <section id="aparecer" class="aparece">
-      <form action="#" id="formulario" class="row g-3 p-3 m-0">
-        <div class="col-md-6">
-          <label for="nombre" class="form-label colorlabel">Nombre</label>
-          <input name="nombre" id="nombre" placeholder="Escriba su nombre" class="form-control" type="text">
+    <template id="template-card">
+      <div class="col-12 mb-2 col-md-4">
+        <div class="card">
+          <img src="" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5>Titulo</h5>
+            <p>precio</p>
+            <button class="btn btn-dark">Comprar</button>
+          </div>
         </div>
-        <div class="col-md-6">
-          <label for="apellido" class="form-label colorlabel">Apellido</label>
-          <input name="apellido" id="apellido" placeholder="Escriba su apellido" class="form-control" type="text">
-        </div>
-        <div class="col-md-6">
-          <label for="mail" class="form-label colorlabel">Correo Electrónico</label>
-          <input name="mail" id="mail" placeholder="email@example.com" class="form-control" type="email">
-        </div>
-        <div class="col-md-6">
-          <label for="residencia" class="form-label colorlabel">Lugar de residencia</label>
-          <select name="residencia" id="residencia" class="form-select">
-            <option selected>Seleccionar...</option>
-            <option value="Buenos Aires">Buenos Aires</option>
-            <option value="Mendoza">Mendoza</option>
-            <option value="Córdoba">Córdoba</option>
-            <option value="La Pampa">La Pampa</option>
-            <option value="Entre Rios">Entre Rios</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label for="cantidad" class="form-label colorlabel">Cuantos MAJUMA! desea comprar?</label>
-          <input type="number" name="cantidad" id="cantidadProductos" min="1" class="form-control">
-        </div>
-        <div class="col-md-3">
-          <label for="precio" class="form-label colorlabel">Precio total</label>
-          <input type="text" id="idPrecio" class="form-control boxtext">
-        </div>
-        <div class="col-md-3 d-flex align-items-end justify-content-evenly">
-            <button onclick="calcularPrecio()" class="hover btn btn-outline-light" type="submit">Calcular precio</button>
-            <button onclick="comprarHistorial()" type="submit" class="btn btn-outline-light">Comprar</button>
-        </div>
-        <div class="col-md-12">
-          <label for="historial" class="form-label colorlabel"></label>
-          <select name="historial" id="historial" class="form-select">
+      </div>
+    </template>
 
-          </select>
-        </div>
-      </form>
-    </section>
+    <div class="container btncontainer">
+      <button class="btn btn-danger btn-sm" id="compra-realizada">
+        Comprar
+    </button>
+    </div>
+
+  </section>
+
 
     <div>
       <a href="#" class="btn-flotante"><svg class="casita" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
@@ -188,34 +145,38 @@
     </div>
   </main>
 
-
     
-  <footer id="contacto" class="container-fluid">    
+  <footer id="contacto" class="container-fluid p-3">
+    <form id="formulario">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre y Apellido</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre y Apellido">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Escriba su mensaje</label>
+        <textarea class="form-control" id="texto" rows="3"></textarea>
+      </div>
+      <div class="container btncontainer">
+        <button onclick="guardar()" class="btn btn-outline-light btn-sm" id="enviar-contacto">
+          Enviar
+      </button>
+      </div>
+    </form>    
     <div>
       <em>&#169 2021 MAJUMA! Todos los derechos reservados.</em>
     </div>
   </footer>
-
-
-  <!-- jQuery -->
-
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
   
   <!-- scripts -->
-
-  <script src="/js/ajax.js"></script>
-  <script src="/js/tienda.js"></script>
+  <script src="/js/carrito.js"></script>
 
   <!-- bootstrap scripts -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-
-
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
 </body>
 </html>
